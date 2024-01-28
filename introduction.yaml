@@ -22,7 +22,7 @@
     # object
     # list
     # boolean
-    # multi-line string
-    # environmental variables
-    # placeholders
-    # multiple files
+    # multi-line string  | >
+    # environmental variables  $USERNAME
+    # placeholders  {{  }}
+    # multiple files  ---
