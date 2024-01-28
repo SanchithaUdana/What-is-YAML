@@ -1,0 +1,14 @@
+# create an onject
+
+old-version:
+  architechture: monolithic
+  application: sample-app-1
+  expose-port: 8080
+  version: 1.0.0
+
+new-version:
+  architechture: micro-service
+  application: sample-app-2
+  expose-port: 8080
+  version: 2.0.0
+

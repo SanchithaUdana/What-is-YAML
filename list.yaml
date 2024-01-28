@@ -1,0 +1,39 @@
+# list representing
+
+
+# type 01
+
+new-version:
+  - architechture: micro-service
+    application: sample-app-1
+    expose-port: 8080
+    version: 1.0.0
+  
+  - architechture: micro-service
+    application: sample-app-2
+    expose-port: 8080
+    version: 2.0.0
+  
+  - architechture: micro-service
+    application: sample-app-3
+    expose-port: 8080
+    version: 3.0.0
+
+# type 02
+
+sample-app-version1:
+  architechture: micro-service
+  application: sample-app-2
+  expose-port: 8080
+  version: 
+    - 1.0.0
+    - 2.0.0
+    - 3.0.0
+
+# type 03
+
+sample-app-version2:
+  architechture: micro-service
+  application: sample-app-2
+  expose-port: 8080
+  version: [1.0.0, 2.0.0, 3.0.0]

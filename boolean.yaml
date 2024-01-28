@@ -1,0 +1,13 @@
+# Boolean - denote 0 and 1
+
+# type 01
+deploy_1: true
+deploy_2: false
+
+# type 02
+deploy_3: yes
+deploy_4: no
+
+# type 03
+deploy_5: on
+deploy_6: off
