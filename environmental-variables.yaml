@@ -1,0 +1,15 @@
+# Environment Variable
+
+# real data values are defined in secret position
+
+USERNAME : admin
+PASSWORD : admin123
+CON_STRING : 192.168.10.3:8080
+
+
+# that environment variables are defined in yaml file
+# create environment variable
+
+username : $USERNAME
+password : $PASSWORD
+con-string : $CON_STRING
