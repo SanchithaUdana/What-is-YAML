@@ -1,0 +1,22 @@
+# placeholders
+
+# i used teplate code of kubernetes pod to explain placeholders
+# creating placeholders
+  # used {{  }}
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .values.app.name }}                  # this is a Placeholder
+  labels:
+    name: {{ .values.app.name }}                # this is a Placeholder
+spec:
+  containers:
+  - name: {{ .values.app.name }}                # this is a Placeholder
+    image: {{ .values.app.image }}              # this is a Placeholder
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: {{ .values.app.port }}   # this is a Placeholder
