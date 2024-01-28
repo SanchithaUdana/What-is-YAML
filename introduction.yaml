@@ -1,0 +1,27 @@
+# What is YAML? - YAML Ain't Markup Language
+ # YAML is a data serialization language. - like as XML and JSON
+# What is the mean of serialization language?
+ # serialization language mean that standart format for data transfer
+# .jaml and .yml are two type of extensions.
+
+# YAML is used to,
+      # write configurations files in docker, kubernetes, ansible and more devops tools
+
+#  YAML is human readable
+#  YAML structure include,
+      # 01. line seperation
+      # 02. spaces
+      # 03. indentation
+
+#
+
+#  in this Documents include
+
+    # key-value pairs
+    # comments
+    # object
+    # list
+    # boolean
+    # multi-line string
+    # enviromental variables
+    # placeholders
