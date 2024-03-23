@@ -2,7 +2,7 @@
  # YAML is a data serialization language. - like as XML and JSON
 # What is the mean of serialization language?
  # serialization language mean that standart format for data transfer
-# .jaml and .yml are two type of extensions.
+# .yaml and .yml are two type of extensions.
 
 # YAML is used to,
       # write configurations files in docker, kubernetes, ansible and more devops tools
