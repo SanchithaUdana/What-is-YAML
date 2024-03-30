@@ -16,9 +16,10 @@ spec:
         memory: "128Mi"
         cpu: "500m"
     ports:
-      - containerPort: 8080
+    - containerPort: 8080
 
---- # this is the notation to used separate the yaml files
+---
+# this is the notation to used separate the yaml files
 
 apiVersion: v2
 kind: Pod
@@ -35,4 +36,4 @@ spec:
         memory: "128Mi"
         cpu: "500m"
     ports:
-      - containerPort: 8080
+    - containerPort: 8080
