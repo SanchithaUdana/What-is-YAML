@@ -1,14 +1,67 @@
-# create an object
+############################
+#      Objects in YAML     #
+############################
 
-old-version:
-  architechture: monolithic
-  application: sample-app-1
-  expose-port: 8080
-  version: 1.0.0
+# In YAML, an object (often called a mapping) is simply a collection of related key-value pairs that sit under one parent key.
+# Think of it like a dictionary in Python or a JSON object.
 
-new-version:
-  architechture: micro-service
-  application: sample-app-2
-  expose-port: 8080
-  version: 2.0.0
+# -------------
+# 1. Basic Form
+# -------------
+
+database: # ← parent key
+  host: localhost
+  port: 5432
+  user: admin
+  password: secret
+
+# database is the object.
+# Inside the object are four key-value pairs (host, port, user, password).
+
+# -------------------
+# 2. Nesting Objects
+# -------------------
+
+app:
+  env: production
+  database:
+    engine: postgres
+    credentials:
+      user: admin
+      password: secret
+
+# app is the top-level object.
+# database is a nested object inside app.
+# credentials is another object nested inside database.
+
+# ---------------------------
+# 3. Objects & Lists Together
+# ---------------------------
+
+services:
+  - name: web
+    image: nginx:latest
+    ports:
+      - "80:80"
+  - name: api
+    image: my-api:1.0
+    environment:
+      LOG_LEVEL: debug
+      MAX_WORKERS: 4
+
+
+# Each entry in services is an object inside a list.
+# This pattern is common in Docker Compose or Kubernetes YAML.
+
+# ---------------
+# Best Practices
+# ---------------
+
+# | Tip                             | Why it matters                                                   |
+# | --------------------------------| ---------------------------------------------------------------- |
+# | Use 2 spaces for each level     | Keeps indentation consistent (never use tabs).                   |
+# | Quoting is optional but helpful | Quote strings containing special characters (`"80:80"`).         |
+# | Comment freely                  | `# comments make configs readable`.                              |
+# | Group related keys              | Improves clarity and avoids repetition.                          |
+# | Validate                        | Use tools like `yamllint` or `yaml-validator` before committing. |
 
