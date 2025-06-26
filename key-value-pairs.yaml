@@ -1,8 +1,9 @@
-# <key> : <value>
-# This file contains key-value pairs for application configuration
+# A key-value pair in YAML is a way to represent data in a structured form, where:
+#     - The key is the name or identifier.
+#     - The value is the data assigned to that key.
+#     - <key> : <value> dtructure for key-value pairs.
 
 architecture: micro-service
 application: sample-app-1
 expose-port: 8080
 version: 1.0.0
-
