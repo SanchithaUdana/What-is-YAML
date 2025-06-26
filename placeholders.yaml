@@ -1,25 +1,33 @@
-# placeholders
+# ================================
+# Placeholder Usage in Kubernetes YAML (Helm Templates)
+# ================================
+# When you use Helm, you write templates instead of hardcoded YAML.
+# Placeholders are defined using double curly braces {{ }} to dynamically insert values.
+# These values are typically passed from a `values.yaml` file.
 
-# i used teplate code of kubernetes pod to explain placeholders
-# creating placeholders
-  # used {{  }}
+# -------------------------------
+# Example: Kubernetes Pod Template with Placeholders
+# -------------------------------
 
 apiVersion: v1
 kind: Pod
 metadata:
-  name: {{ .values.app.name }}                  # this is a Placeholder
+  name: {{ .Values.app.name }}                  # this is a Placeholder
   labels:
-    name: {{ .values.app.name }}                # this is a Placeholder
+    name: {{ .Values.app.name }}                # this is a Placeholder
+
 spec:
   containers:
-  - name: {{ .values.app.name }}                # this is a Placeholder
-    image: {{ .values.app.image }}              # this is a Placeholder
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-      requests:
-        memory: "64Mi"
-        cpu: "250m"
-    ports:
-      - containerPort: {{ .values.app.port }}   # this is a Placeholder
+    - name: {{ .Values.app.name }}              # this is a Placeholder
+      image: {{ .Values.app.image }}            # this is a Placeholder
+
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+
+      ports:
+        - containerPort: {{ .Values.app.port }} # this is a Placeholder

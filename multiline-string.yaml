@@ -1,19 +1,40 @@
-# Multiline String
+# ================================
+# Multiline String Representation in YAML
+# YAML supports two styles to write multi-line text:
+# 1. Literal Block Style: "|"
+# 2. Folded Block Style: ">"
+# ================================
 
-# type 01 - using "|"
-# this type consider as a multiline string
-# according to below example, that have three lines.
-
+# ----------------
+# Type 01: Literal Block Style (|)
+# Keeps line breaks exactly as written
+# The output will have three separate lines
+# ----------------
 sentence-1: |
   this is a sample yaml file. 
   that can be used to write configuration files 
   in devops role.
 
-# type 02 - using ">"
-# this type consider as a single line string
-# according to below example, that consider only one lines.
+# Output when used:
+# this is a sample yaml file. 
+# that can be used to write configuration files 
+# in devops role.
 
+# ----------------
+# Type 02: Folded Block Style (>)
+# Converts all line breaks to spaces (i.e., a single line)
+# Useful for long text that should be shown as one paragraph
+# ----------------
 sentence-2: >
   this is a sample yaml file. 
   that can be used to write configuration files 
   in devops role.
+
+# Output when used:
+# this is a sample yaml file. that can be used to write configuration files in devops role.
+
+
+# | Style   | Symbol | Keeps Line Breaks | Output Format             | Use Case                 |                                  |
+# | ------- | ------ | ----------------- | ------------------------- | ------------------------ | -------------------------------- |
+# | Literal | \`     | \`                | ✅ Yes                     | Multi-line (as written)  | Logs, code blocks, exact formats |
+# | Folded  | `>`    | ❌ No              | Single line (spaces only) | Paragraphs, descriptions |                                  |

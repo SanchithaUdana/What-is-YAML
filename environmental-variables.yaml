@@ -1,15 +1,24 @@
-# Environment Variable
+# ================================
+# Environment Variable Setup in YAML
+# Real sensitive values are stored securely (e.g., in environment, .env files, or secret managers)
+# YAML file references these environment variables using $VARIABLE_NAME syntax
+# ================================
 
-# real data values are defined in secret position
+# -------------------------------
+# Step 1: Real Data (Usually stored in environment or secret file)
+# This section is NOT usually part of the YAML itself in real applications
+# Shown here just for illustration
+# -------------------------------
 
-USERNAME : admin
-PASSWORD : admin123
-CON_STRING : 192.168.10.3:8080
+USERNAME : admin            # real username value
+PASSWORD : admin123         # real password value
+CON_STRING : 192.168.10.3:8080  # real database or server connection string
 
+# -------------------------------
+# Step 2: YAML References to Environment Variables
+# These values are not hardcoded — instead, they refer to the actual environment variables
+# -------------------------------
 
-# that environment variables are defined in yaml file
-# create environment variable
-
-username : $USERNAME
-password : $PASSWORD
-con-string : $CON_STRING
+username: $USERNAME         # value will be pulled from environment variable USERNAME
+password: $PASSWORD         # value will be pulled from environment variable PASSWORD
+con-string: $CON_STRING     # value will be pulled from environment variable CON_STRING

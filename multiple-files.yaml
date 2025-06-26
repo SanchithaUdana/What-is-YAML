@@ -1,27 +1,46 @@
-# Multiple file including in same YAML file
-# used to seperate ---
+# ==============================================
+# Multiple YAML Documents in a Single File
+# ==============================================
+# In YAML, the triple dash `---` is used to separate multiple documents.
+# This is commonly used in Kubernetes when deploying multiple resources (e.g., Pod + Service)
+# All resources can be applied at once using: kubectl apply -f <filename>.yaml
+# ==============================================
 
+# -------------------------------
+# First YAML Document: Pod Definition
+# -------------------------------
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myapp
+  name: myapp                      # Pod name
   labels:
-    name: myapp
+    name: myapp                    # Label used for selection
 spec:
   containers:
-  - name: myapp
-    image: <Image>
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-    ports:
-    - containerPort: 8080
+    - name: myapp                  # Container name
+      image: <Image>               # Replace <Image> with your actual image (e.g., nginx:latest)
 
+      resources:                   # Resource management (limits & requests)
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+
+      ports:
+        - containerPort: 8080      # Port exposed from the container
+
+# -------------------------------
+# Separator Between Multiple YAML Documents
+# -------------------------------
 ---
-# this is the notation to used separate the yaml files
+# "---" tells the YAML parser this is a new document
 
-apiVersion: v2
+# -------------------------------
+# Second YAML Document: Another Pod (could be a different version or spec)
+# -------------------------------
+apiVersion: v2                     # NOTE: `v2` is invalid for Pod — just shown as an example
 kind: Pod
 metadata:
   name: myapp
@@ -29,11 +48,22 @@ metadata:
     name: myapp
 spec:
   containers:
-  - name: myapp
-    image: <Image>
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-    ports:
-    - containerPort: 8080
+    - name: myapp
+      image: <Image>               # Replace with your image
+
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+
+      ports:
+        - containerPort: 8080
+
+# ==============================
+# ✅ Tips:
+# - The `---` separator is optional after the last document.
+# - You can also use `...` to indicate the end of a YAML stream, but it's not required in Kubernetes.
+# - Avoid repeating the same resource with the same name/kind if not intentional.
