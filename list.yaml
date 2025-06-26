@@ -1,38 +1,49 @@
-# list representing
-
-# type 01
+# ================================
+# Type 01: List of Objects
+# Each item in the list is a full app configuration
+# Useful when managing multiple app versions or services
+# ================================
 
 new-version:
-  - architechture: micro-service
-    application: sample-app-1
-    expose-port: 8080
-    version: 1.0.0
-  
+  - architechture: micro-service      # Architecture type of the service
+    application: sample-app-1         # Name of the application
+    expose-port: 8080                 # Port exposed to the outside
+    version: 1.0.0                    # Specific version of the app
+
   - architechture: micro-service
     application: sample-app-2
     expose-port: 8080
     version: 2.0.0
-  
+
   - architechture: micro-service
     application: sample-app-3
     expose-port: 8080
     version: 3.0.0
 
-# type 02
+# ================================
+# Type 02: Single Object with a List Value
+# The version key holds a list of version values
+# Useful when one app supports multiple versions
+# ================================
 
 sample-app-version1:
-  architechture: micro-service
-  application: sample-app-2
-  expose-port: 8080
+  architechture: micro-service        # Common architecture
+  application: sample-app-2           # App name is fixed
+  expose-port: 8080                   # Port is the same for all versions
   version: 
-    - 1.0.0
+    - 1.0.0                           # List of supported versions
     - 2.0.0
     - 3.0.0
 
-# type 03
+# ================================
+# Type 03: Compact List Representation
+# Same as Type 02 but version list is inline
+# Good for shorter YAML files or cleaner syntax
+# ================================
 
 sample-app-version2:
   architechture: micro-service
   application: sample-app-2
   expose-port: 8080
-  version: [1.0.0, 2.0.0, 3.0.0]
+  version: [1.0.0, 2.0.0, 3.0.0]      # Inline list format (same meaning as Type 02)
+
