@@ -1,5 +1,8 @@
 # <key> : <value>
-architechture: micro-service
+# This file contains key-value pairs for application configuration
+
+architecture: micro-service
 application: sample-app-1
 expose-port: 8080
 version: 1.0.0
+

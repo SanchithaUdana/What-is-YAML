@@ -1,21 +1,19 @@
 # Multiline String
 
-# type 01 - using |
+# type 01 - using "|"
 # this type consider as a multiline string
 # according to below example, that have three lines.
 
-sentence-1 : |
+sentence-1: |
   this is a sample yaml file. 
   that can be used to write configuration files 
   in devops role.
 
-
-
-# type 02 - using >
+# type 02 - using ">"
 # this type consider as a single line string
 # according to below example, that consider only one lines.
 
-sentence-2 : >
+sentence-2: >
   this is a sample yaml file. 
   that can be used to write configuration files 
   in devops role.
