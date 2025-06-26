@@ -1,13 +1,28 @@
-# Boolean - denote 0 and 1
+# ================================
+# Boolean Representation in YAML
+# YAML supports multiple ways to express boolean values
+# true = 1 / enabled / active
+# false = 0 / disabled / inactive
+# ================================
 
-# type 01
-deploy_1: true
-deploy_2: false
+# ----------------
+# Type 01: Standard Booleans
+# Most explicit and widely used (preferred in modern tools like Kubernetes, Ansible)
+# ----------------
+deploy_1: true     # Equivalent to 1 (enabled)
+deploy_2: false    # Equivalent to 0 (disabled)
 
-# type 02
-deploy_3: yes
-deploy_4: no
+# ----------------
+# Type 02: Yes/No
+# Also valid YAML booleans (internally converted to true/false)
+# ----------------
+deploy_3: yes      # Interpreted as true
+deploy_4: no       # Interpreted as false
 
-# type 03
-deploy_5: on
-deploy_6: off
+# ----------------
+# Type 03: On/Off
+# These are also valid and treated as booleans in YAML
+# ----------------
+deploy_5: on       # Interpreted as true
+deploy_6: off      # Interpreted as false
+
